@@ -1,23 +1,40 @@
-package com.revature.flashcard.questionbank.beans;
+package com.revature.flashcard.approval.beans;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/*
+ *  This Database holds only Pending Questions once Approved/Denied they are removed/deleted from DB
+ *  Upon Approval the question will be submitted to the Question Bank Service
+ */
 @Entity
 @Table
 public class Question {
+
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	
 	private String question;
 	private String answer;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	private Category category;
 	
 	public Question() {
+	}
+
+	public Question(String question, String answer, Category category) {
+		super();
+		this.question = question;
+		this.answer = answer;
+		this.category = category;
 	}
 
 	public Question(int id, String question, String answer, Category category) {
@@ -26,13 +43,6 @@ public class Question {
 		this.question = question;
 		this.answer = answer;
 		this.category = category;
-	}
-
-	public Question(int id, String question, String answer) {
-		super();
-		this.id = id;
-		this.question = question;
-		this.answer = answer;
 	}
 
 	public int getId() {
@@ -71,6 +81,6 @@ public class Question {
 	public String toString() {
 		return "Question [id=" + id + ", question=" + question + ", answer=" + answer + ", category=" + category + "]";
 	}
-
+	
 	
 }
