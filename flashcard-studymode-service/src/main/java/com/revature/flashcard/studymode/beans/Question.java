@@ -1,20 +1,20 @@
 package com.revature.flashcard.studymode.beans;
 
-import javax.persistence.Entity;
+/*import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table*/
 public class Question {
-	@Id
+	//@Id
 	private int id;
 	private String question;
 	private String answer;
 	
-	@ManyToOne(fetch=FetchType.EAGER)
+//	@ManyToOne(fetch=FetchType.EAGER)
 	private Category category;
 	
 	public Question() {

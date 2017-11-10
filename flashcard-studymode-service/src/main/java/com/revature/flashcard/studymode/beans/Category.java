@@ -9,17 +9,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity
-@Table
+//@Entity
+//@Table
 public class Category {
-
+/*
 	@Id
-	@Column(name="c_id")
+	@Column(name="c_id")*/
 	private int id;
 	private String catName;
-	
+/*	
 	@OneToMany
-	@JoinColumn(name="c_id")
+	@JoinColumn(name="c_id")*/
 	private List<Question> question;
 	
 	public Category() {
