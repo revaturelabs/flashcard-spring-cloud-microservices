@@ -20,6 +20,14 @@ public class Question {
 	public Question() {
 	}
 
+	public Question(int id, String question, String answer, Category category) {
+		super();
+		this.id = id;
+		this.question = question;
+		this.answer = answer;
+		this.category = category;
+	}
+
 	public Question(int id, String question, String answer) {
 		super();
 		this.id = id;
