@@ -1,0 +1,4 @@
+#flashcard-studymode-service
+spring:
+  application: 
+    name: flashcard-studymode-service 
